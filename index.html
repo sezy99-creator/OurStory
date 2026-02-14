@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Our Story ❤️</title>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- MUSIC TOGGLE -->
+  <button id="musicToggle" onclick="toggleMusic()">🔊 Music: ON</button>
+
+  <!-- LOGIN -->
+  <div id="login">
+    <div class="loginCard">
+      <div class="loginBadge">❤️ Our Secret</div>
+      <h2>Enter the secret password ❤️</h2>
+      <p class="loginHint">Only you know this 😌</p>
+
+      <div class="loginRow">
+        <input type="password" id="passwordInput" placeholder="Password" />
+        <button class="loginBtn" onclick="checkPassword()">Unlock</button>
+      </div>
+
+      <div id="loginError" class="loginError"></div>
+      <div class="loginTiny">Tip: try our special date 😉</div>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <section id="intro" class="hidden">
+    <div class="overlay"></div>
+    <div class="intro-content">
+      <h1>For The One I Miss ❤️</h1>
+
+      <p class="romantic-text">
+        There are nights when I look at the sky<br>
+        and wonder if you’re looking at the same moon.<br><br>
+
+        Do you remember here? It's where we become 1, where I belonged to you<br><br>
+
+        There are mornings when I wake up<br>
+        and for a second forget the distance…<br>
+        then I remember. And I miss you all over again.<br><br>
+
+        Miles apart. Different skies.<br>
+        But somehow… the same heart.<br><br>
+
+        Bazen mesafe sadece kilometre değil…<br>
+        sabretmek, özlemek, “biraz daha dayan” demek.<br><br>
+
+        I built this little world so we can feel close again.<br>
+        Ready to start our journey?
+      </p>
+
+      <button onclick="startJourney()">Start Our Journey ✈️</button>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <div id="mainContent" class="hidden">
+    <nav>
+      <button onclick="showSection('travel')">🌍 Travel</button>
+      <button id="gameBtn" disabled>🎮 Game 🔒</button>
+      <button id="inboxBtn" disabled>💌 Inbox 🔒</button>
+      <button id="finalBtn" disabled>🎬 Final 🔒</button>
+    </nav>
+
+    <!-- TRAVEL -->
+    <section id="travel" class="section hidden">
+      <h2>Our Travel Map 🌍</h2>
+
+      <div id="map"></div>
+
+      <div id="cityPanel" class="hidden">
+        <button class="smallBtn" onclick="backToMap()">⬅ Back to Map</button>
+        <h2 id="cityTitle"></h2>
+        <p id="cityText"></p>
+        <div id="gallery"></div>
+      </div>
+
+      
+
+      <button id="travelContinue" class="hidden sparkleBtn sparkleOn" onclick="goToGame()">
+        Continue ➜ Mini Game 🎮
+      </button>
+    </section>
+
+    <!-- GAME / QUIZ -->
+    <section id="game" class="section hidden">
+      <h2 class="sectionTitle">Mini Game 🎮</h2>
+
+      <div id="quizBox">
+        <div id="progressWrap"><div id="progressBar"></div></div>
+
+        <h3 id="question">Question here</h3>
+
+        <div id="answers">
+          <button onclick="answer(0, this, event)"></button>
+          <button onclick="answer(1, this, event)"></button>
+          <button onclick="answer(2, this, event)"></button>
+        </div>
+
+        <p id="feedback"></p>
+
+        <button id="nextQuestionBtn" class="hidden sparkleBtn" onclick="nextQuestion()">
+          Next ➜
+        </button>
+      </div>
+    </section>
+
+    <!-- LOVE INBOX -->
+    <section id="inbox" class="section hidden">
+      <h2 class="sectionTitle">💌 Love Inbox</h2>
+      <p class="subText">
+        Open these one by one…<br>
+        Teker teker aç 😌
+      </p>
+
+      <div class="inboxGrid" id="mailList"></div>
+
+      <!-- MAIL MODAL -->
+      <div id="mailModal" class="mailModal hidden" onclick="closeMail()">
+        <div class="mailPaper" onclick="event.stopPropagation()">
+          <div class="mailHeader">
+            <div>
+              <div class="mailMeta" id="mailMeta"></div>
+              <h3 class="mailTitle" id="mailTitle"></h3>
+            </div>
+            <button class="smallBtn" onclick="closeMail()">✖ Close</button>
+          </div>
+
+          <div class="mailBody" id="mailBody"></div>
+          <div id="mailSparkles"></div>
+        </div>
+      </div>
+
+      <button id="inboxContinue" class="hidden sparkleBtn sparkleOn" onclick="goToFinal()">
+        Continue ➜ Final 🎬
+      </button>
+    </section>
+
+    <!-- FINAL -->
+    <section id="final" class="section hidden finalSection">
+      <div class="finalContainer">
+
+        <h1 class="finalTitle">❤️ Final Message ❤️</h1>
+
+        <div class="videoWrapper">
+          <video id="finalVideo" controls playsinline>
+            <source src="images/final.mp4" type="video/mp4">
+          </video>
+
+          <!-- OVERLAY NOTE -->
+          <div class="videoNote">
+            You are my always. ❤️
+          </div>
+        </div>
+
+        <p class="finalText">
+          If you watched everything until here…<br>
+          just know that I love you more than all of this combined. ❤️
+	  You belong to me.Just like I  & this video is only belong to you.  
+        </p>
+
+      </div>
+    </section>
+
+  </div> <!-- /#mainContent -->
+
+  <!-- AUDIO -->
+  <audio id="bgMusic" loop>
+    <source src="images/music.mp3" type="audio/mpeg">
+  </audio>
+
+  <audio id="quizMusic" loop>
+    <source src="images/fun.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- SCRIPTS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

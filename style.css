@@ -1,0 +1,740 @@
+:root{
+  --card: rgba(255,255,255,0.92);
+  --shadow: 0 18px 60px rgba(0,0,0,0.25);
+  --accentA: rgba(225,29,72,0.9);
+  --accentB: rgba(255,105,180,0.9);
+}
+
+body{
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f4;
+  margin: 0;
+}
+
+.hidden{ display:none !important; }
+
+/* ================= MUSIC ================= */
+#musicToggle{
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  z-index: 9999;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255,255,255,0.85);
+  cursor: pointer;
+  box-shadow: 0 10px 26px rgba(0,0,0,0.10);
+}
+
+/* ================= LOGIN ================= */
+#login{
+  min-height: 100vh;
+  display:flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 80px 24px 24px;
+
+  background: url("./images/intro.jpg") center/cover no-repeat;
+  position: relative;
+}
+
+#login::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.45);
+}
+
+.loginCard{
+  position: relative;
+  z-index: 2;
+
+  background: rgba(255,255,255,0.16);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 22px;
+  padding: 22px;
+
+  max-width: 520px;
+  width: 100%;
+
+  color: white;
+  animation: popIn .45s ease;
+}
+
+@keyframes popIn{
+  from{ opacity:0; transform: translateY(10px) scale(.98); }
+  to{ opacity:1; transform: translateY(0) scale(1); }
+}
+
+#login h2, #login p, .loginTiny{
+  color: rgba(255,255,255,0.92);
+}
+
+.loginBadge{
+  position:absolute;
+  top: 14px;
+  right: 14px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(225,29,72,0.12);
+  color: rgba(225,29,72,0.95);
+  font-weight: 700;
+}
+
+.loginRow{
+  display:flex;
+  gap: 10px;
+  margin-top: 14px;
+  flex-wrap: wrap;
+}
+
+#login input{
+  flex:1;
+  min-width: 220px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.55);
+  background: rgba(255,255,255,0.92);
+  font-size: 16px;
+}
+
+.loginBtn{
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: none;
+  cursor:pointer;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(90deg, rgba(225,29,72,0.95), rgba(255,105,180,0.95));
+  box-shadow: 0 14px 30px rgba(225,29,72,0.25);
+  transition: 0.2s;
+}
+.loginBtn:hover{ transform: translateY(-1px); }
+.loginBtn:active{ transform: scale(0.98); }
+
+.loginError{
+  margin-top: 12px;
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.loginTiny{
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* login shake (JS ekliyor: shakeX) */
+.shakeX{ animation: shakeX .38s; }
+@keyframes shakeX{
+  0%,100%{ transform: translateX(0); }
+  20%{ transform: translateX(-8px); }
+  40%{ transform: translateX(8px); }
+  60%{ transform: translateX(-6px); }
+  80%{ transform: translateX(6px); }
+}
+
+/* ================= INTRO ================= */
+#intro{
+  position: relative;
+  height: 100vh;
+  background: url("images/night.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* INTRO TEXT FIX */
+.intro-content,
+.intro-content h1,
+.intro-content p{
+  color: white;
+}
+
+.romantic-text{
+  color: rgba(255,255,255,0.95);
+  font-size: 20px;
+  line-height: 1.8;
+  margin: 18px 0;
+}
+
+#intro button{
+  background: white;
+  color: black;
+  font-weight: 700;
+  padding: 14px 26px;
+  font-size: 18px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#intro button:hover{
+  transform: scale(1.05);
+  background: pink;
+}
+
+.overlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.6);
+}
+
+.intro-content{
+  position:relative;
+  z-index:2;
+  max-width: 850px;
+  padding: 24px;
+  background: rgba(0,0,0,0.35);
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.2);
+  animation: fadeIn 1.4s ease forwards;
+}
+
+@keyframes fadeIn{
+  from{ opacity:0; transform: translateY(14px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* ================= NAV ================= */
+nav{
+  margin-top: 18px;
+}
+nav button{
+  margin: 8px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+button:disabled{
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sectionTitle{
+  margin: 16px 0 8px;
+  font-size: 32px;
+}
+.subText{
+  margin: 0 0 18px;
+  opacity: 0.9;
+}
+
+/* ================= MAP ================= */
+#map{
+  height: 500px;
+  width: 80%;
+  margin: 20px auto;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+#cityPanel{
+  width: 80%;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 18px 60px rgba(0,0,0,0.14);
+}
+
+.smallBtn{
+  padding: 8px 12px;
+  border-radius: 12px;
+  border: none;
+  cursor:pointer;
+}
+
+/* ================= GALLERY ================= */
+#gallery{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 14px;
+}
+
+.photoCard{
+  background: rgba(255,255,255,0.92);
+  border-radius: 18px;
+  padding: 12px;
+  box-shadow: 0 12px 34px rgba(0,0,0,0.12);
+}
+
+.photoCard img{
+  width: 100%;
+  border-radius: 14px;
+  transition: transform .25s ease;
+}
+.photoCard img:hover{
+  transform: scale(1.03);
+}
+
+.photoNote{
+  margin-top: 8px;
+  font-size: 14px;
+  text-align: center;
+  font-style: italic;
+  color: #444;
+}
+
+/* ================= BUTTON FX (sparkle) ================= */
+.sparkleBtn{
+  position: relative;
+  margin: 24px auto;
+  padding: 14px 24px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: white;
+  background: #e11d48;
+  overflow: hidden;
+  display: block;
+  width: fit-content;
+}
+
+.sparkleOn{
+  animation: pulse 1.15s infinite ease-in-out, glow 1.15s infinite ease-in-out;
+}
+
+@keyframes pulse{
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.07); }
+  100%{ transform: scale(1); }
+}
+@keyframes glow{
+  0%{ box-shadow: 0 0 0 rgba(225,29,72,0); }
+  50%{ box-shadow: 0 0 28px rgba(225,29,72,0.75); }
+  100%{ box-shadow: 0 0 0 rgba(225,29,72,0); }
+}
+.sparkleBtn::after{
+  content:"";
+  position:absolute;
+  top:0; left:-140%;
+  width:140%; height:100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.35), transparent);
+  animation: shine 1.6s infinite;
+  pointer-events:none;
+}
+@keyframes shine{
+  0%{ left:-140%; }
+  100%{ left:140%; }
+}
+.sparkleBtn::before{
+  content:"✦ ✦ ✦";
+  position:absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  animation: twinkle 0.9s infinite alternate;
+  pointer-events:none;
+}
+@keyframes twinkle{
+  from{ opacity: 0.45; letter-spacing: 2px; }
+  to{ opacity: 1; letter-spacing: 6px; }
+}
+
+/* ================= SKIP ================= */
+#travelSkip{
+  margin-top: 10px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.12);
+}
+
+/* =========================
+   QUIZ BASE LOOK (RENKLI + PREMIUM)
+========================= */
+#game{
+  min-height: 80vh;
+  position: relative;
+  padding: 10px 0 70px;
+
+  background-image: url("images/funny.jpg");
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+  background-position: center top;
+}
+
+#game::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.55);
+}
+
+#game .sectionTitle{
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-shadow: 0 10px 30px rgba(0,0,0,0.35);
+}
+
+#quizBox{
+  position: relative;
+  z-index: 2;
+  width: min(720px, 92%);
+  margin: 18px auto 0;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+#progressWrap{
+  height: 10px;
+  background: rgba(0,0,0,0.10);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+#progressBar{
+  height: 100%;
+  width: 0%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accentA), var(--accentB));
+  transition: width 0.35s ease;
+}
+
+#question{
+  font-size: 26px;
+  margin: 10px 0 16px;
+  letter-spacing: 0.2px;
+}
+
+/* answers base (premium animasyonlar bunun üstünde) */
+#answers button{
+  width: 100%;
+  max-width: 520px;
+  margin: 10px auto;
+  padding: 14px 14px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.96);
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+#answers button:hover{
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 16px 34px rgba(0,0,0,0.14);
+  filter: brightness(1.02);
+}
+
+#feedback{
+  min-height: 28px;
+  font-size: 18px;
+  margin-top: 12px;
+}
+#feedback.good{ color:#16a34a; font-weight: 800; }
+#feedback.bad{  color:#dc2626; font-weight: 800; }
+
+/* Question transition (JS loadQuestion: fadeSlide) */
+@keyframes fadeSlide{
+  from{ opacity:0; transform: translateY(18px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* right/wrong effects for box (JS: shake/winGlow) */
+.shake{ animation: shake .35s; }
+@keyframes shake{
+  0%,100%{ transform: translateX(0); }
+  25%{ transform: translateX(-6px); }
+  75%{ transform: translateX(6px); }
+}
+
+.winGlow{ animation: winGlow .5s; }
+@keyframes winGlow{
+  from{ box-shadow: var(--shadow); }
+  to{ box-shadow: 0 0 40px rgba(255,105,180,0.55); }
+}
+
+/* =========================
+   QUIZ: PREMIUM ANIMATIONS
+========================= */
+
+/* click ripple */
+#answers button::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(225,29,72,0.25), transparent 55%);
+  opacity:0;
+  transition: opacity .25s ease;
+  pointer-events:none;
+}
+#answers button.ripple::after{ opacity:1; }
+
+/* correct / wrong styles */
+#answers button.correct{
+  border-color: rgba(22,163,74,0.55);
+  box-shadow: 0 14px 34px rgba(22,163,74,0.18);
+  animation: correctPop .45s ease;
+}
+#answers button.wrong{
+  border-color: rgba(220,38,38,0.55);
+  box-shadow: 0 14px 34px rgba(220,38,38,0.18);
+  animation: wrongShake .38s ease;
+}
+
+/* correct glow */
+@keyframes correctPop{
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.05); }
+  100%{ transform: scale(1); }
+}
+/* wrong shake */
+@keyframes wrongShake{
+  0%,100%{ transform: translateX(0); }
+  20%{ transform: translateX(-7px); }
+  40%{ transform: translateX(7px); }
+  60%{ transform: translateX(-5px); }
+  80%{ transform: translateX(5px); }
+}
+
+/* Question/answers appear animation */
+.quizIn{
+  animation: quizIn .5s ease both;
+}
+@keyframes quizIn{
+  from{ opacity:0; transform: translateY(14px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+/* progress bar “pulse” */
+#progressBar.pulse{
+  animation: barPulse .45s ease;
+}
+@keyframes barPulse{
+  0%{ filter: brightness(1); }
+  50%{ filter: brightness(1.25); }
+  100%{ filter: brightness(1); }
+}
+
+/* feedback pop */
+#feedback.pop{
+  animation: fbPop .35s ease;
+}
+@keyframes fbPop{
+  from{ transform: translateY(6px); opacity:.3; }
+  to{ transform: translateY(0); opacity:1; }
+}
+
+/* ================= INBOX ================= */
+#inbox{
+  padding: 10px 0 70px;
+}
+
+.inboxGrid{
+  width: min(900px, 92%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+}
+
+@media (max-width: 850px){
+  .inboxGrid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 520px){
+  .inboxGrid{ grid-template-columns: 1fr; }
+}
+
+.mailBtn{
+  background: white;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 16px;
+  padding: 14px;
+  cursor: pointer;
+  text-align: left;
+  transition: 0.15s;
+}
+.mailBtn:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+}
+.mailBtn .tag{
+  font-size: 12px;
+  opacity: 0.7;
+}
+.mailBtn .title{
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+/* ================= FINAL ================= */
+.finalCard{
+  width: min(720px, 92%);
+  margin: 18px auto;
+  background: var(--card);
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.12);
+}
+
+.finalVideo{
+  width: min(820px, 92%);
+  border-radius: 18px;
+  margin-top: 14px;
+}
+
+/* ================= MAIL MODAL ================= */
+.mailModal{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9998;
+  padding: 18px;
+}
+
+.mailPaper{
+  width: min(860px, 92%);
+  background: rgba(255,255,255,0.95);
+  border-radius: 22px;
+  padding: 18px 18px 22px;
+  box-shadow: 0 20px 80px rgba(0,0,0,0.35);
+  position: relative;
+  overflow: hidden;
+  animation: popMail 0.25s ease;
+}
+
+@keyframes popMail{
+  from{ transform: scale(0.98) translateY(10px); opacity: 0; }
+  to{ transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* confetti hearts */
+.confettiHeart{
+  position:absolute;
+  top: -10px;
+  font-size: 18px;
+  opacity: 0.9;
+  animation: fall 1.4s ease forwards;
+  pointer-events:none;
+}
+
+@keyframes fall{
+  0%{ transform: translateY(-10px) rotate(0deg); opacity: 0; }
+  15%{ opacity: 1; }
+  100%{ transform: translateY(520px) rotate(340deg); opacity: 0; }
+}
+/* FINAL SECTION */
+.finalSection {
+  text-align: center;
+  padding: 40px 20px;
+  background: radial-gradient(circle at top, #1a001a, #000);
+  min-height: 100vh;
+}
+
+/* TITLE */
+.finalTitle {
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: #ff4d88;
+  animation: glow 2s infinite alternate;
+}
+
+/* VIDEO WRAPPER */
+.videoWrapper {
+  position: relative;
+  display: inline-block;
+  max-width: 800px;
+  width: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 0 40px rgba(255, 77, 136, 0.4);
+}
+
+/* VIDEO */
+.videoWrapper video {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+}
+
+/* OVERLAY TEXT */
+.videoNote {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: white;
+  font-size: 22px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  animation: fadeInUp 2s ease;
+}
+
+/* TEXT */
+.finalText {
+  margin-top: 25px;
+  font-size: 18px;
+  color: #ddd;
+  animation: fadeIn 3s ease;
+}
+
+/* ANIMATIONS */
+@keyframes glow {
+  from { text-shadow: 0 0 10px #ff4d88; }
+  to   { text-shadow: 0 0 25px #ff4d88; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+/* FINAL background = intro background */
+#final.finalSection{
+  background: url("images/intro.jpg") center/cover no-repeat fixed;
+  position: relative;
+}
+
+/* üstüne yumuşak karartma (intro gibi) */
+#final.finalSection::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,0.55);
+  pointer-events:none;
+}
+
+/* final içeriği karartmanın üstünde kalsın */
+#final .finalContainer{
+  position: relative;
+  z-index: 2;
+}
+#finalSparkles{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+#final .finalContainer{ position: relative; }
+#travelSkip {
+  display: none;
+}
