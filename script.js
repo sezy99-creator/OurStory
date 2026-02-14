@@ -188,7 +188,7 @@ const cities = {
     coords:[37.77652, 29.08639],
     title:"Denizli 🇹🇷",
     text:"",
-    images: imgList("denizli1.JPG"),
+    images: imgList("denizli1.jpg"),
     notes: ["Why that's our only picture maaaaan?"]
   },
 
@@ -196,7 +196,7 @@ const cities = {
     coords:[25.28662, -80.89865],
     title:"Everglades 🇺🇸",
     text:"",
-    images: imgList("everglades1.JPG"),
+    images: imgList("everglades1.jpg"),
     notes: ["yavrumun elinde yavru"]
   },
 
@@ -204,7 +204,7 @@ const cities = {
     coords:[43.77925, 11.24626],
     title:"Floransa / Florence 🇮🇹",
     text:"",
-    images: imgList("floransa1.JPG","floransa2.JPG","floransa3.JPG"),
+    images: imgList("floransa1.jpg","floransa2.jpg","floransa3.jpg"),
     notes: ["Ama cok ayipppppp","that was hoot","we are not begging for money for reaaaaaal"]
   },
 
@@ -212,7 +212,7 @@ const cities = {
     coords:[45.58060, 10.62050],
     title:"Lake Garda 🇮🇹",
     text:"",
-    images: imgList("garda1.JPG","garda2.JPG"),
+    images: imgList("garda1.jpg","garda2.jpg"),
     notes: ["that was such a amazing hotel","trying to escape from my parents"]
   },
 
@@ -220,7 +220,7 @@ const cities = {
     coords:[36.10697, -112.11299],
     title:"Grand Canyon 🇺🇸",
     text:"",
-    images: imgList("grandcanyon1.JPG","grandcanyon2.JPG","grandcanyon3.JPG"),
+    images: imgList("grandcanyon1.jpg","grandcanyon2.jpg","grandcanyon3.jpg"),
     notes: ["Pretty view","Prettier view","En cok pretty view <3"]
   },
 
@@ -228,7 +228,7 @@ const cities = {
     coords:[38.90883, 1.43296],
     title:"Ibiza 🇪🇸",
     text:"",
-    images: imgList("ibiza1.JPG"),
+    images: imgList("ibiza1.jpg"),
     notes: ["When you look this picture more than 2 minute, you become dizzy"]
   },
 
@@ -252,7 +252,7 @@ const cities = {
     coords:[34.05223, -118.24368],
     title:"Los Angeles 🇺🇸",
     text:"",
-    images: imgList("losangeles1.JPG","losangeles2.JPG"),
+    images: imgList("losangeles1.jpg","losangeles2.jpg"),
     notes: ["Just chilling in LA , you knooooow"," That pier was so nice, lets go agai1!!!!1"]
   },
 
@@ -268,7 +268,7 @@ const cities = {
     coords:[45.74596, 11.66237],
     title:"Marostica 🇮🇹",
     text:"",
-    images: imgList("morastica1.JPG","morastica2.JPG","marostica2.JPG","marostica3.JPG"),
+    images: imgList("morastica1.jpg","morastica2.jpg","marostica2.jpg","marostica3.jpg"),
     notes: ["That was a HIKE","Ohhhhh my heart","How can I forget that picture, it's always in my hearth","Just 2 hours after maybe 3. That's a special place"]
   },
 
@@ -284,7 +284,7 @@ const cities = {
     coords:[25.76168, -80.19179],
     title:"Miami 🇺🇸",
     text:"",
-    images: imgList("miami1.JPG","miami2.jpg","miami3.jpg","miami4.jpg","miami5.jpeg"),
+    images: imgList("miami1.jpg","miami2.jpg","miami3.jpg","miami4.jpg","miami5.jpg"),
     notes: ["We are not a rock band actually","Delicious!!!!!","Hadi Tavuk!!!!!!!","Yemek zamaniiii","Let's go to biiiiic biiiiiic"]
   },
 
@@ -300,7 +300,7 @@ const cities = {
     coords:[40.85180, 14.26812],
     title:"Napoli 🇮🇹",
     text:"",
-    images: imgList("napoli1.JPG","napoli2.JPG","napoli3.JPG","napoli4.JPG","napoli5.JPG"),
+    images: imgList("napoli1.jpg","napoli2.jpg","napoli3.jpg","napoli4.jpg","napoli5.jpg"),
     notes: ["word famous pizza chef!!!!","This is the picture of relief","just a nice selfie","My lips really hurt but that's super funny","Word class pasta chef aaaaa benim oooo"]
   },
 
@@ -308,7 +308,7 @@ const cities = {
     coords:[45.40797, 11.88586],
     title:"Padova 🇮🇹",
     text:"",
-    images: imgList("padova1.jpg","padova2.jpg","padova3.JPG","padova4.JPG"),
+    images: imgList("padova1.jpg","padova2.jpg","padova3.jpg","padova4.jpg"),
     notes: ["Cok tatlısın","I loook totally different ","Askim neden cooook açsın ","I am free now!!!!(Unemployed:( )"]
   },
 
@@ -316,7 +316,7 @@ const cities = {
     coords:[38.13205, 13.33561],
     title:"Palermo 🇮🇹",
     text:"",
-    images: imgList("palermo1.JPG","palermo2.JPG","palermo3.JPG"),
+    images: imgList("palermo1.jpg","palermo2.jpg","palermo3.jpg"),
     notes: ["Another we are not alcoholic caption ","I would live in your eyes , such beautiful view","one of my fav picture "]
   },
 
@@ -332,7 +332,7 @@ const cities = {
     coords:[43.70853, 10.40360],
     title:"Pisa 🇮🇹",
     text:"",
-    images: imgList("pisa1.JPG","pisa2.JPG"),
+    images: imgList("pisa1.jpg","pisa2.jpg"),
     notes: ["I don't know why but you didn't wanted to get picture . Cok ayip!!!!!!1","But we did Pizza sandwich "]
   },
 
@@ -340,7 +340,7 @@ const cities = {
     coords:[41.90278, 12.49636],
     title:"Rome 🇮🇹",
     text:"",
-    images: imgList("roma.JPG","roma1.JPG","roma3.JPG"),
+    images: imgList("roma.jpg","roma1.jpg","roma3.jpg"),
     notes: ["Our room was weird lets face that","",""]
   },
 
@@ -348,7 +348,7 @@ const cities = {
     coords:[32.71574, -117.16108],
     title:"San Diego 🇺🇸",
     text:"",
-    images: imgList("sandiego1.JPG","sandiego2.JPG"),
+    images: imgList("sandiego1.jpg","sandiego2.jpg"),
     notes: ["Askim let's go again I loved here","That was SCARY"]
   },
 
@@ -356,7 +356,7 @@ const cities = {
     coords:[47.60621, -122.33207],
     title:"Seattle 🇺🇸",
     text:"",
-    images: imgList("seattle1.JPG","seattle2.JPG","seattle3.JPG","seattle4.JPG","seattle5.JPG"),
+    images: imgList("seattle1.jpg","seattle2.jpg","seattle3.jpg","seattle4.jpg","seattle5.jpg"),
     notes: ["1st Time we cooked for your familya dn that was MESS","Everyone say PEYNIRRRRRR","Clam chowder zamaniiiii","I really enjoyed that day and I looked gooood","Askim o neeee uzay araci miii"]
   },
 
@@ -364,7 +364,7 @@ const cities = {
     coords:[45.43876, 12.32715],
     title:"Venice 🇮🇹",
     text:"",
-    images: imgList("venice1.JPG","venice2.JPG","venice3.JPG"),
+    images: imgList("venice1.jpg","venice2.jpg","venice3.jpg"),
     notes: ["Venezia","Daha cok Venezia","Sapsal bir Venezia"]
   },
 
